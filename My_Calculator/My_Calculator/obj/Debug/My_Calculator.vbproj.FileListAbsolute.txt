@@ -1,0 +1,12 @@
+C:\Users\ssteele\Documents\My_Calculator\My_Calculator\My_Calculator\bin\Debug\My_Calculator.exe.config
+C:\Users\ssteele\Documents\My_Calculator\My_Calculator\My_Calculator\bin\Debug\My_Calculator.exe
+C:\Users\ssteele\Documents\My_Calculator\My_Calculator\My_Calculator\bin\Debug\My_Calculator.pdb
+C:\Users\ssteele\Documents\My_Calculator\My_Calculator\My_Calculator\bin\Debug\My_Calculator.xml
+C:\Users\ssteele\Documents\My_Calculator\My_Calculator\My_Calculator\obj\Debug\My_Calculator.vbproj.AssemblyReference.cache
+C:\Users\ssteele\Documents\My_Calculator\My_Calculator\My_Calculator\obj\Debug\My_Calculator.Form1.resources
+C:\Users\ssteele\Documents\My_Calculator\My_Calculator\My_Calculator\obj\Debug\My_Calculator.Resources.resources
+C:\Users\ssteele\Documents\My_Calculator\My_Calculator\My_Calculator\obj\Debug\My_Calculator.vbproj.GenerateResource.cache
+C:\Users\ssteele\Documents\My_Calculator\My_Calculator\My_Calculator\obj\Debug\My_Calculator.vbproj.CoreCompileInputs.cache
+C:\Users\ssteele\Documents\My_Calculator\My_Calculator\My_Calculator\obj\Debug\My_Calculator.exe
+C:\Users\ssteele\Documents\My_Calculator\My_Calculator\My_Calculator\obj\Debug\My_Calculator.xml
+C:\Users\ssteele\Documents\My_Calculator\My_Calculator\My_Calculator\obj\Debug\My_Calculator.pdb
