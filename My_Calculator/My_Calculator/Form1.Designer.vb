@@ -53,7 +53,7 @@ Partial Class Form1
         Me.TextBox_OP2 = New System.Windows.Forms.TextBox()
         Me.TextBox_Calculation_Type = New System.Windows.Forms.TextBox()
         Me.Label_Calcualtion_Type = New System.Windows.Forms.Label()
-        Me.Label_Calulation = New System.Windows.Forms.Label()
+        Me.Label_Calculation = New System.Windows.Forms.Label()
         Me.Label_Memory = New System.Windows.Forms.Label()
         Me.TextBox_Memory = New System.Windows.Forms.TextBox()
         Me.Button_MC = New System.Windows.Forms.Button()
@@ -364,23 +364,23 @@ Partial Class Form1
         Me.Label_Calcualtion_Type.TabIndex = 29
         Me.Label_Calcualtion_Type.Text = "CAL"
         '
-        'Label_Calulation
+        'Label_Calculation
         '
-        Me.Label_Calulation.AutoSize = True
-        Me.Label_Calulation.Location = New System.Drawing.Point(597, 103)
-        Me.Label_Calulation.Name = "Label_Calulation"
-        Me.Label_Calulation.Size = New System.Drawing.Size(62, 15)
-        Me.Label_Calulation.TabIndex = 32
-        Me.Label_Calulation.Text = "Calulation"
+        Me.Label_Calculation.AutoSize = True
+        Me.Label_Calculation.Location = New System.Drawing.Point(569, 103)
+        Me.Label_Calculation.Name = "Label_Calculation"
+        Me.Label_Calculation.Size = New System.Drawing.Size(134, 15)
+        Me.Label_Calculation.TabIndex = 32
+        Me.Label_Calculation.Text = "CALCULATION (DONE)"
         '
         'Label_Memory
         '
         Me.Label_Memory.AutoSize = True
-        Me.Label_Memory.Location = New System.Drawing.Point(597, 213)
+        Me.Label_Memory.Location = New System.Drawing.Point(599, 213)
         Me.Label_Memory.Name = "Label_Memory"
-        Me.Label_Memory.Size = New System.Drawing.Size(52, 15)
+        Me.Label_Memory.Size = New System.Drawing.Size(62, 15)
         Me.Label_Memory.TabIndex = 33
-        Me.Label_Memory.Text = "Memory"
+        Me.Label_Memory.Text = "MEMORY"
         '
         'TextBox_Memory
         '
@@ -446,7 +446,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Button_MC)
         Me.Controls.Add(Me.TextBox_Memory)
         Me.Controls.Add(Me.Label_Memory)
-        Me.Controls.Add(Me.Label_Calulation)
+        Me.Controls.Add(Me.Label_Calculation)
         Me.Controls.Add(Me.TextBox_Calculation_Type)
         Me.Controls.Add(Me.Label_Calcualtion_Type)
         Me.Controls.Add(Me.TextBox_OP2)
@@ -517,7 +517,7 @@ Partial Class Form1
     Friend WithEvents TextBox_OP2 As TextBox
     Friend WithEvents TextBox_Calculation_Type As TextBox
     Friend WithEvents Label_Calcualtion_Type As Label
-    Friend WithEvents Label_Calulation As Label
+    Friend WithEvents Label_Calculation As Label
     Friend WithEvents Label_Memory As Label
     Friend WithEvents TextBox_Memory As TextBox
     Friend WithEvents Button_MC As Button
