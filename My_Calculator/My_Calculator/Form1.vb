@@ -2,6 +2,7 @@
 Public Class Form1
     Dim Operand_1 As Decimal
     Dim Operand_2 As Decimal
+    Dim Memory As Decimal
     Dim Calc_Type As String
     Dim Missing_Op_1 As Boolean
     Dim Missing_Op_2 As Boolean
@@ -72,7 +73,7 @@ Public Class Form1
 
     Private Sub Button_Binary_Calculation_Click(sender As Object, e As EventArgs) Handles Button_Addition.Click, Button_Division.Click, Button_Multiplication.Click, Button_Subtraction.Click
         If Missing_Op_2 And Not Start_New_Number And Not Missing_Op_1 Then
-            If IsNumeric(TextBox_Display.Text) Then
+            If Not ((Not IsNumeric(TextBox_Display.Text) Or (TextBox_Display.Text = "NaN"))) Then
                 Operand_2 = Val(TextBox_Display.Text)
                 TextBox_OP2.Text = Operand_2.ToString
                 TextBox_Calculation_Type.Text = Calc_Type
@@ -81,9 +82,6 @@ Public Class Form1
                 Binary_Calculation()
                 Calc_Type = (CType(sender, Button).Text)
             End If
-        End If
-        If Missing_Op_1 Then
-            TextBox_OP2.Text = ""
         End If
         If Not ((Not IsNumeric(TextBox_Display.Text) Or (TextBox_Display.Text = "NaN"))) Then
             Operand_1 = Val(TextBox_Display.Text)
@@ -242,5 +240,35 @@ Public Class Form1
         Button_Percent.Enabled = True
         Button_Negation.Enabled = True
         Button_Decimal.Enabled = True
+    End Sub
+
+    Private Sub Button_MC_Click(sender As Object, e As EventArgs) Handles Button_MC.Click
+        Memory = 0
+        TextBox_Memory.Text = Memory.ToString
+    End Sub
+
+    Private Sub Button_MR_Click(sender As Object, e As EventArgs) Handles Button_MR.Click
+        TextBox_Display.Text = Memory.ToString
+    End Sub
+
+    Private Sub Button_MS_Click(sender As Object, e As EventArgs) Handles Button_MS.Click
+        If Not ((Not IsNumeric(TextBox_Display.Text) Or (TextBox_Display.Text = "NaN"))) Then
+            Memory = Val(TextBox_Display.Text)
+            TextBox_Memory.Text = Memory.ToString
+        End If
+    End Sub
+
+    Private Sub Button_M_Plus_Click(sender As Object, e As EventArgs) Handles Button_M_Plus.Click
+        If Not ((Not IsNumeric(TextBox_Display.Text) Or (TextBox_Display.Text = "NaN"))) Then
+            Memory = Memory + Val(TextBox_Display.Text)
+            TextBox_Memory.Text = Memory.ToString
+        End If
+    End Sub
+
+    Private Sub Button_M_Minus_Click(sender As Object, e As EventArgs) Handles Button_M_Minus.Click
+        If Not ((Not IsNumeric(TextBox_Display.Text) Or (TextBox_Display.Text = "NaN"))) Then
+            Memory = Memory - Val(TextBox_Display.Text)
+            TextBox_Memory.Text = Memory.ToString
+        End If
     End Sub
 End Class
