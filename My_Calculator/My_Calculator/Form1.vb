@@ -10,8 +10,8 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBox_Display.Text = "0"
         KeyPreview = True
-        Start_New_Number = False
-        Missing_Op_2 = False
+        Start_New_Number = True
+        Missing_Op_2 = True
         Me.Show()
         Button_Equals.Focus()
     End Sub
@@ -73,10 +73,11 @@ Public Class Form1
             If IsNumeric(TextBox_Display.Text) Then
                 Operand_2 = Val(TextBox_Display.Text)
                 TextBox_OP2.Text = Operand_2.ToString
+                TextBox_Calculation_Type.Text = Calc_Type
+                TextBox_OP1.Text = Operand_1.ToString
                 Missing_Op_2 = False
                 Binary_Calculation()
                 Calc_Type = (CType(sender, Button).Text)
-                TextBox_Calculation_Type.Text = Calc_Type.ToString
             End If
         End If
         If Start_New_Number Then
@@ -84,12 +85,11 @@ Public Class Form1
         End If
         If Not ((Not IsNumeric(TextBox_Display.Text) Or (TextBox_Display.Text = "NaN"))) Then
             Operand_1 = Val(TextBox_Display.Text)
-            TextBox_OP1.Text = Operand_1.ToString
+            '           TextBox_OP1.Text = Operand_1.ToString
             Calc_Type = (CType(sender, Button).Text)
-            TextBox_Calculation_Type.Text = Calc_Type.ToString
+            '           TextBox_Calculation_Type.Text = Calc_Type
             Start_New_Number = True
             Missing_Op_2 = True
-
         End If
         Button_Equals.Focus()
     End Sub
@@ -104,7 +104,7 @@ Public Class Form1
                 Enabled_Operands = True
                 Enable_Operands()
             End If
-            Missing_Op_2 = False
+            Missing_Op_2 = True
             Start_New_Number = True
             Return
         End If
@@ -112,7 +112,7 @@ Public Class Form1
             Operand_2 = Val(TextBox_Display.Text)
             TextBox_OP2.Text = Operand_2.ToString
             Missing_Op_2 = False
-
+            Start_New_Number = False
         End If
         If Not Start_New_Number Then
             Binary_Calculation()
@@ -156,17 +156,19 @@ Public Class Form1
                 Button_Division.PerformClick()
             Case Microsoft.VisualBasic.ChrW(Keys.Return)
                 Button_Equals.PerformClick()
+            Case Convert.ToChar(Keys.Back)
+                Button_Erase.PerformClick()
         End Select
     End Sub
 
     Private Sub Button_Clear_Click(sender As Object, e As EventArgs) Handles Button_Clear.Click
         TextBox_Display.Text = "0"
-        Start_New_Number = False
-        Missing_Op_2 = False
+        Start_New_Number = True
+        Missing_Op_2 = True
         Operand_2 = 0
-        TextBox_OP2.Text = Operand_2.ToString
+        TextBox_OP2.Text = ""
         Operand_1 = 0
-        TextBox_OP1.Text = Operand_1.ToString
+        TextBox_OP1.Text = ""
         Calc_Type = ""
         TextBox_Calculation_Type.Text = Calc_Type
         If (Not Enabled_Operands) Then
