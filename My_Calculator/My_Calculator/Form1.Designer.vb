@@ -61,6 +61,13 @@ Partial Class Form1
         Me.Button_M_Plus = New System.Windows.Forms.Button()
         Me.Button_M_Minus = New System.Windows.Forms.Button()
         Me.Button_MS = New System.Windows.Forms.Button()
+        Me.Label_Calculation_Building = New System.Windows.Forms.Label()
+        Me.TextBox_Calculation_Type_Building = New System.Windows.Forms.TextBox()
+        Me.Label_Calculation_Type_Building = New System.Windows.Forms.Label()
+        Me.TextBox_OP2_Building = New System.Windows.Forms.TextBox()
+        Me.Label_OP2_Building = New System.Windows.Forms.Label()
+        Me.TextBox_OP1_Building = New System.Windows.Forms.TextBox()
+        Me.Label_OP1_Building = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Button_Three
@@ -319,7 +326,7 @@ Partial Class Form1
         'Label_OP1
         '
         Me.Label_OP1.AutoSize = True
-        Me.Label_OP1.Location = New System.Drawing.Point(510, 124)
+        Me.Label_OP1.Location = New System.Drawing.Point(508, 234)
         Me.Label_OP1.Name = "Label_OP1"
         Me.Label_OP1.Size = New System.Drawing.Size(31, 15)
         Me.Label_OP1.TabIndex = 25
@@ -327,7 +334,7 @@ Partial Class Form1
         '
         'TextBox_OP1
         '
-        Me.TextBox_OP1.Location = New System.Drawing.Point(547, 121)
+        Me.TextBox_OP1.Location = New System.Drawing.Point(545, 231)
         Me.TextBox_OP1.Name = "TextBox_OP1"
         Me.TextBox_OP1.Size = New System.Drawing.Size(173, 20)
         Me.TextBox_OP1.TabIndex = 26
@@ -335,7 +342,7 @@ Partial Class Form1
         'Label_OP2
         '
         Me.Label_OP2.AutoSize = True
-        Me.Label_OP2.Location = New System.Drawing.Point(510, 179)
+        Me.Label_OP2.Location = New System.Drawing.Point(508, 289)
         Me.Label_OP2.Name = "Label_OP2"
         Me.Label_OP2.Size = New System.Drawing.Size(31, 15)
         Me.Label_OP2.TabIndex = 27
@@ -343,14 +350,14 @@ Partial Class Form1
         '
         'TextBox_OP2
         '
-        Me.TextBox_OP2.Location = New System.Drawing.Point(547, 176)
+        Me.TextBox_OP2.Location = New System.Drawing.Point(545, 286)
         Me.TextBox_OP2.Name = "TextBox_OP2"
         Me.TextBox_OP2.Size = New System.Drawing.Size(173, 20)
         Me.TextBox_OP2.TabIndex = 28
         '
         'TextBox_Calculation_Type
         '
-        Me.TextBox_Calculation_Type.Location = New System.Drawing.Point(547, 150)
+        Me.TextBox_Calculation_Type.Location = New System.Drawing.Point(545, 260)
         Me.TextBox_Calculation_Type.Name = "TextBox_Calculation_Type"
         Me.TextBox_Calculation_Type.Size = New System.Drawing.Size(173, 20)
         Me.TextBox_Calculation_Type.TabIndex = 30
@@ -358,7 +365,7 @@ Partial Class Form1
         'Label_Calcualtion_Type
         '
         Me.Label_Calcualtion_Type.AutoSize = True
-        Me.Label_Calcualtion_Type.Location = New System.Drawing.Point(510, 153)
+        Me.Label_Calcualtion_Type.Location = New System.Drawing.Point(508, 263)
         Me.Label_Calcualtion_Type.Name = "Label_Calcualtion_Type"
         Me.Label_Calcualtion_Type.Size = New System.Drawing.Size(29, 15)
         Me.Label_Calcualtion_Type.TabIndex = 29
@@ -367,7 +374,7 @@ Partial Class Form1
         'Label_Calculation
         '
         Me.Label_Calculation.AutoSize = True
-        Me.Label_Calculation.Location = New System.Drawing.Point(569, 103)
+        Me.Label_Calculation.Location = New System.Drawing.Point(567, 213)
         Me.Label_Calculation.Name = "Label_Calculation"
         Me.Label_Calculation.Size = New System.Drawing.Size(134, 15)
         Me.Label_Calculation.TabIndex = 32
@@ -376,7 +383,7 @@ Partial Class Form1
         'Label_Memory
         '
         Me.Label_Memory.AutoSize = True
-        Me.Label_Memory.Location = New System.Drawing.Point(599, 213)
+        Me.Label_Memory.Location = New System.Drawing.Point(600, 323)
         Me.Label_Memory.Name = "Label_Memory"
         Me.Label_Memory.Size = New System.Drawing.Size(62, 15)
         Me.Label_Memory.TabIndex = 33
@@ -384,14 +391,14 @@ Partial Class Form1
         '
         'TextBox_Memory
         '
-        Me.TextBox_Memory.Location = New System.Drawing.Point(544, 231)
+        Me.TextBox_Memory.Location = New System.Drawing.Point(545, 341)
         Me.TextBox_Memory.Name = "TextBox_Memory"
         Me.TextBox_Memory.Size = New System.Drawing.Size(176, 20)
         Me.TextBox_Memory.TabIndex = 34
         '
         'Button_MC
         '
-        Me.Button_MC.Location = New System.Drawing.Point(530, 257)
+        Me.Button_MC.Location = New System.Drawing.Point(531, 367)
         Me.Button_MC.Name = "Button_MC"
         Me.Button_MC.Size = New System.Drawing.Size(36, 23)
         Me.Button_MC.TabIndex = 35
@@ -400,7 +407,7 @@ Partial Class Form1
         '
         'Button_MR
         '
-        Me.Button_MR.Location = New System.Drawing.Point(572, 257)
+        Me.Button_MR.Location = New System.Drawing.Point(573, 367)
         Me.Button_MR.Name = "Button_MR"
         Me.Button_MR.Size = New System.Drawing.Size(36, 23)
         Me.Button_MR.TabIndex = 36
@@ -409,7 +416,7 @@ Partial Class Form1
         '
         'Button_M_Plus
         '
-        Me.Button_M_Plus.Location = New System.Drawing.Point(614, 257)
+        Me.Button_M_Plus.Location = New System.Drawing.Point(615, 367)
         Me.Button_M_Plus.Name = "Button_M_Plus"
         Me.Button_M_Plus.Size = New System.Drawing.Size(36, 23)
         Me.Button_M_Plus.TabIndex = 37
@@ -418,7 +425,7 @@ Partial Class Form1
         '
         'Button_M_Minus
         '
-        Me.Button_M_Minus.Location = New System.Drawing.Point(656, 257)
+        Me.Button_M_Minus.Location = New System.Drawing.Point(657, 367)
         Me.Button_M_Minus.Name = "Button_M_Minus"
         Me.Button_M_Minus.Size = New System.Drawing.Size(36, 23)
         Me.Button_M_Minus.TabIndex = 38
@@ -427,18 +434,82 @@ Partial Class Form1
         '
         'Button_MS
         '
-        Me.Button_MS.Location = New System.Drawing.Point(698, 257)
+        Me.Button_MS.Location = New System.Drawing.Point(699, 367)
         Me.Button_MS.Name = "Button_MS"
         Me.Button_MS.Size = New System.Drawing.Size(36, 23)
         Me.Button_MS.TabIndex = 39
         Me.Button_MS.Text = "MS"
         Me.Button_MS.UseVisualStyleBackColor = True
         '
+        'Label_Calculation_Building
+        '
+        Me.Label_Calculation_Building.AutoSize = True
+        Me.Label_Calculation_Building.Location = New System.Drawing.Point(545, 95)
+        Me.Label_Calculation_Building.Name = "Label_Calculation_Building"
+        Me.Label_Calculation_Building.Size = New System.Drawing.Size(162, 15)
+        Me.Label_Calculation_Building.TabIndex = 46
+        Me.Label_Calculation_Building.Text = "  CALCULATION (BUILDING)"
+        '
+        'TextBox_Calculation_Type_Building
+        '
+        Me.TextBox_Calculation_Type_Building.Location = New System.Drawing.Point(545, 142)
+        Me.TextBox_Calculation_Type_Building.Name = "TextBox_Calculation_Type_Building"
+        Me.TextBox_Calculation_Type_Building.Size = New System.Drawing.Size(173, 20)
+        Me.TextBox_Calculation_Type_Building.TabIndex = 45
+        '
+        'Label_Calculation_Type_Building
+        '
+        Me.Label_Calculation_Type_Building.AutoSize = True
+        Me.Label_Calculation_Type_Building.Location = New System.Drawing.Point(508, 145)
+        Me.Label_Calculation_Type_Building.Name = "Label_Calculation_Type_Building"
+        Me.Label_Calculation_Type_Building.Size = New System.Drawing.Size(29, 15)
+        Me.Label_Calculation_Type_Building.TabIndex = 44
+        Me.Label_Calculation_Type_Building.Text = "CAL"
+        '
+        'TextBox_OP2_Building
+        '
+        Me.TextBox_OP2_Building.Location = New System.Drawing.Point(545, 168)
+        Me.TextBox_OP2_Building.Name = "TextBox_OP2_Building"
+        Me.TextBox_OP2_Building.Size = New System.Drawing.Size(173, 20)
+        Me.TextBox_OP2_Building.TabIndex = 43
+        '
+        'Label_OP2_Building
+        '
+        Me.Label_OP2_Building.AutoSize = True
+        Me.Label_OP2_Building.Location = New System.Drawing.Point(508, 171)
+        Me.Label_OP2_Building.Name = "Label_OP2_Building"
+        Me.Label_OP2_Building.Size = New System.Drawing.Size(31, 15)
+        Me.Label_OP2_Building.TabIndex = 42
+        Me.Label_OP2_Building.Text = "OP2"
+        '
+        'TextBox_OP1_Building
+        '
+        Me.TextBox_OP1_Building.Location = New System.Drawing.Point(545, 113)
+        Me.TextBox_OP1_Building.Name = "TextBox_OP1_Building"
+        Me.TextBox_OP1_Building.Size = New System.Drawing.Size(173, 20)
+        Me.TextBox_OP1_Building.TabIndex = 41
+        '
+        'Label_OP1_Building
+        '
+        Me.Label_OP1_Building.AutoSize = True
+        Me.Label_OP1_Building.Location = New System.Drawing.Point(508, 116)
+        Me.Label_OP1_Building.Name = "Label_OP1_Building"
+        Me.Label_OP1_Building.Size = New System.Drawing.Size(31, 15)
+        Me.Label_OP1_Building.TabIndex = 40
+        Me.Label_OP1_Building.Text = "OP1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 434)
+        Me.Controls.Add(Me.Label_Calculation_Building)
+        Me.Controls.Add(Me.TextBox_Calculation_Type_Building)
+        Me.Controls.Add(Me.Label_Calculation_Type_Building)
+        Me.Controls.Add(Me.TextBox_OP2_Building)
+        Me.Controls.Add(Me.Label_OP2_Building)
+        Me.Controls.Add(Me.TextBox_OP1_Building)
+        Me.Controls.Add(Me.Label_OP1_Building)
         Me.Controls.Add(Me.Button_MS)
         Me.Controls.Add(Me.Button_M_Minus)
         Me.Controls.Add(Me.Button_M_Plus)
@@ -525,4 +596,11 @@ Partial Class Form1
     Friend WithEvents Button_M_Plus As Button
     Friend WithEvents Button_M_Minus As Button
     Friend WithEvents Button_MS As Button
+    Friend WithEvents Label_Calculation_Building As Label
+    Friend WithEvents TextBox_Calculation_Type_Building As TextBox
+    Friend WithEvents Label_Calculation_Type_Building As Label
+    Friend WithEvents TextBox_OP2_Building As TextBox
+    Friend WithEvents Label_OP2_Building As Label
+    Friend WithEvents TextBox_OP1_Building As TextBox
+    Friend WithEvents Label_OP1_Building As Label
 End Class

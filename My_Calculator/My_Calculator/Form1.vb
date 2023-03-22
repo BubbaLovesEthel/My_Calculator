@@ -20,12 +20,21 @@ Public Class Form1
     End Sub
 
     Private Sub TextBox_Display_TextChanged(sender As Object, e As EventArgs) Handles TextBox_Display.TextChanged
-
+        If (Missing_Op_1) Then
+            TextBox_OP1_Building.Text = TextBox_Display.Text
+        ElseIf (Missing_Op_2) Then
+            TextBox_OP2_Building.Text = TextBox_Display.Text
+        ElseIf (Not Missing_Op_1 And Start_New_Number) Then
+            TextBox_OP1_Building.Text = TextBox_Display.Text
+        End If
     End Sub
 
     Private Sub Button_Number_Click(sender As Object, e As EventArgs) Handles Button_Zero.Click, Button_One.Click, Button_Two.Click, Button_Three.Click, Button_Four.Click, Button_Five.Click, Button_Six.Click, Button_Seven.Click, Button_Eight.Click, Button_Nine.Click
         If (TextBox_Display.Text.Equals("0") Or Start_New_Number Or (Not IsNumeric(TextBox_Display.Text) Or (TextBox_Display.Text = "NaN"))) Then
             TextBox_Display.Text = Microsoft.VisualBasic.Strings.Right((CType(sender, Button).Text), 1)
+            If (Start_New_Number And Not Missing_Op_1 And Not Missing_Op_2) Then
+                Missing_Op_1 = True
+            End If
             Start_New_Number = False
         Else
             TextBox_Display.Text = TextBox_Display.Text + Microsoft.VisualBasic.Strings.Right((CType(sender, Button).Text), 1)
@@ -72,9 +81,11 @@ Public Class Form1
     End Sub
 
     Private Sub Button_Binary_Calculation_Click(sender As Object, e As EventArgs) Handles Button_Addition.Click, Button_Division.Click, Button_Multiplication.Click, Button_Subtraction.Click
+        TextBox_Calculation_Type_Building.Text = (CType(sender, Button).Text)
         If Missing_Op_2 And Not Start_New_Number And Not Missing_Op_1 Then
             If Not ((Not IsNumeric(TextBox_Display.Text) Or (TextBox_Display.Text = "NaN"))) Then
                 Operand_2 = Val(TextBox_Display.Text)
+                '                TextBox_OP2_Building.Text = Operand_2.ToString ' CHECK THIS
                 TextBox_OP2.Text = Operand_2.ToString
                 TextBox_Calculation_Type.Text = Calc_Type
                 TextBox_OP1.Text = Operand_1.ToString
@@ -85,9 +96,11 @@ Public Class Form1
         End If
         If Not ((Not IsNumeric(TextBox_Display.Text) Or (TextBox_Display.Text = "NaN"))) Then
             Operand_1 = Val(TextBox_Display.Text)
+            TextBox_OP1_Building.Text = Operand_1.ToString
             Start_New_Number = True
             Calc_Type = (CType(sender, Button).Text)
             Missing_Op_1 = False
+            TextBox_OP2_Building.Text = ""
             Missing_Op_2 = True
         End If
         Button_Equals.Focus()
@@ -107,15 +120,19 @@ Public Class Form1
             Missing_Op_1 = True
             Return
         End If
-        If Missing_Op_2 Then
+        If (Missing_Op_1) Then
+            Operand_1 = Val(TextBox_Display.Text)
+            Missing_Op_1 = False
+        ElseIf Missing_Op_2 Then
             Operand_2 = Val(TextBox_Display.Text)
             TextBox_OP2.Text = Operand_2.ToString
             Missing_Op_2 = False
         End If
-        If Not Missing_Op_1 Then
+        If Not Missing_Op_1 And Not Missing_Op_2 Then
             Binary_Calculation()
             Start_New_Number = True
             TextBox_OP2.Text = Operand_2.ToString
+            TextBox_OP2_Building.Text = Operand_2.ToString
             TextBox_Calculation_Type.Text = Calc_Type
             TextBox_OP1.Text = Operand_1.ToString
             Operand_1 = Val(TextBox_Display.Text)
@@ -167,10 +184,13 @@ Public Class Form1
         Missing_Op_2 = True
         Operand_2 = 0
         TextBox_OP2.Text = ""
+        TextBox_OP2_Building.Text = ""
         Operand_1 = 0
         TextBox_OP1.Text = ""
+        TextBox_OP1_Building.Text = ""
         Calc_Type = ""
-        TextBox_Calculation_Type.Text = Calc_Type
+        TextBox_Calculation_Type.Text = ""
+        TextBox_Calculation_Type_Building.Text = ""
         If (Not Enabled_Operands) Then
             Enabled_Operands = True
             Enable_Operands()
@@ -212,6 +232,8 @@ Public Class Form1
         End Try
         If (Not IsNumeric(TextBox_Display.Text) Or (TextBox_Display.Text = "NaN")) Then
             Disable_Operands()
+        ElseIf (Not Missing_Op_1 And Start_New_Number) Then
+            Operand_1 = Val(TextBox_Display.Text)
         End If
     End Sub
 
@@ -271,4 +293,5 @@ Public Class Form1
             TextBox_Memory.Text = Memory.ToString
         End If
     End Sub
+
 End Class
